@@ -47,6 +47,12 @@ The bookmark icon.
 
 Type: `String`
 
+### folder
+
+The folder in which the bookmark item belongs.
+
+Type: `String`
+
 ## License
 
 MIT © [Vu Tran](https://github.com/vutran/)
