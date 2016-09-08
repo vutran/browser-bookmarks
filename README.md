@@ -1,5 +1,7 @@
 # browser-bookmarks
 
+[![Build Status](https://travis-ci.org/vutran/browser-bookmarks.svg?branch=master)](https://travis-ci.org/vutran/browser-bookmarks) [![Coverage Status](https://coveralls.io/repos/github/vutran/browser-bookmarks/badge.svg?branch=master)](https://coveralls.io/github/vutran/browser-bookmarks?branch=master)
+
 > Retrieve bookmarks from different browsers.
 
 ## Install
