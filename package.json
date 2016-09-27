@@ -16,7 +16,7 @@
     "test": "jest --coverage"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
+    "babel-eslint": "^7.0.0",
     "babel-jest": "^15.0.0",
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.14.0",
