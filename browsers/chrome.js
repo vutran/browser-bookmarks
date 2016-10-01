@@ -65,10 +65,10 @@ const normalize = item => ({
  * @param {Object[]}
  * @return {Object[]}
  */
-const getChildren = children => {
+const getChildren = (children) => {
   // build the bookmarks list
   let bookmarks = [];
-  children.forEach(child => {
+  children.forEach((child) => {
     // if it's a folder, recursively retrieve it's childs
     if (child.type === 'folder') {
       const grandChildren = getChildren(child.children);
@@ -89,7 +89,7 @@ const getChildren = children => {
  * @param {String} file - The path to the bookmarks file
  * @return {Promise} - An array of bookmark objects
  */
-const extractBookmarks = file => new Promise(resolve => {
+const extractBookmarks = file => new Promise((resolve) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
       resolve([]);
@@ -98,7 +98,7 @@ const extractBookmarks = file => new Promise(resolve => {
       if (dataJson.roots) {
         // build the bookmarks list
         let bookmarks = [];
-        Object.keys(dataJson.roots).forEach(folder => {
+        Object.keys(dataJson.roots).forEach((folder) => {
           const rootObject = dataJson.roots[folder];
           // retrieve child nodes in each root folder
           // and concatenate to global collection

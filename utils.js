@@ -6,7 +6,7 @@ const url = require('url');
  * @param {String} link
  * @return {String}
  */
-const getFavicon = link => {
+const getFavicon = (link) => {
   if (link && link.length) {
     const o = url.parse(link);
     if (o) {
