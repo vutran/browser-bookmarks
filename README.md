@@ -1,6 +1,6 @@
 # browser-bookmarks
 
-[![Build Status](https://travis-ci.org/vutran/browser-bookmarks.svg?branch=master)](https://travis-ci.org/vutran/browser-bookmarks) [![Coverage Status](https://coveralls.io/repos/github/vutran/browser-bookmarks/badge.svg?branch=master)](https://coveralls.io/github/vutran/browser-bookmarks?branch=master) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Build Status](https://travis-ci.org/vutran/browser-bookmarks.svg?branch=develop)](https://travis-ci.org/vutran/browser-bookmarks) [![Coverage Status](https://coveralls.io/repos/github/vutran/browser-bookmarks/badge.svg?branch=develop)](https://coveralls.io/github/vutran/browser-bookmarks?branch=develop) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 > Retrieve bookmarks from different browsers.
 
