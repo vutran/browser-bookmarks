@@ -1,6 +1,8 @@
-const os = require('os');
-const path = require('path');
-const chrome = require('../../browsers/chrome');
+import os from 'os';
+import path from 'path';
+import chrome from '../../browsers/chrome';
+
+jest.mock('fs');
 
 describe('retrieve the default directory', () => {
   const homedir = os.homedir();
@@ -127,13 +129,44 @@ describe('get childrens', () => {
 
 describe('extract bookmarks', () => {
   it('should retrieve local bookmarks', async () => {
+    const mockData = {
+      roots: {
+        bookmarks_bar: {
+          children: [
+            {
+              date_added: 0,
+              id: 1,
+              name: 'GitHub',
+              type: 'url',
+              url: 'https://github.com',
+            },
+          ],
+        },
+      },
+    };
+    // eslint-disable-next-line global-require, no-underscore-dangle
+    require('fs').__setFileContents(JSON.stringify(mockData));
     const dir = path.join(chrome.getDirectory('darwin'));
     const bookmarks = await chrome.extractBookmarks(dir);
     expect(bookmarks).toBeDefined();
     expect(bookmarks instanceof Array).toBeTruthy();
+    expect(bookmarks.length).toBeGreaterThan(0);
+  });
+
+  it('should retrieve no bookmarks', async () => {
+    const mockData = {};
+    // eslint-disable-next-line global-require, no-underscore-dangle
+    require('fs').__setFileContents(JSON.stringify(mockData));
+    const dir = path.join(chrome.getDirectory('darwin'));
+    const bookmarks = await chrome.extractBookmarks(dir);
+    expect(bookmarks).toBeDefined();
+    expect(bookmarks instanceof Array).toBeTruthy();
+    expect(bookmarks.length).toBe(0);
   });
 
   it('should return nothing for an invalid file', async () => {
+    // eslint-disable-next-line global-require, no-underscore-dangle
+    require('fs').__setIsInvalidFile(true);
     const dir = 'INVALID_DIR';
     const bookmarks = await chrome.extractBookmarks(dir);
     expect(bookmarks).toEqual([]);
