@@ -1,6 +1,6 @@
 {
   "name": "browser-bookmarks",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Retrieve bookmarks from different browsers.",
   "keywords": [
     "browser",
