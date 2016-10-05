@@ -1,6 +1,6 @@
 # browser-bookmarks
 
-[![Travis](https://img.shields.io/travis/vutran/browser-bookmarks/develop.svg?maxAge=2592000&style=flat-square)]() [![Coveralls branch](https://img.shields.io/coveralls/vutran/browser-bookmarks/develop.svg?maxAge=2592000&style=flat-square)]() [![license](https://img.shields.io/github/license/vutran/browser-bookmarks.svg?maxAge=2592000&style=flat-square)]()
+[![Travis](https://img.shields.io/travis/vutran/browser-bookmarks/develop.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/vutran/browser-bookmarks) [![Coveralls branch](https://img.shields.io/coveralls/vutran/browser-bookmarks/develop.svg?maxAge=2592000&style=flat-square)](https://coveralls.io/github/vutran/browser-bookmarks) [![license](https://img.shields.io/github/license/vutran/browser-bookmarks.svg?maxAge=2592000&style=flat-square)](LICENSE)
 
 > Retrieve bookmarks from different browsers.
 
