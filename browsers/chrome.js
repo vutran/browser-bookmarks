@@ -68,18 +68,21 @@ const normalize = item => ({
 const getChildren = (children) => {
   // build the bookmarks list
   let bookmarks = [];
-  children.forEach((child) => {
-    // if it's a folder, recursively retrieve it's childs
+
+  for (let i = 0; i < children.length; i++) {
+    const child = children[i];
     if (child.type === 'folder') {
-      const grandChildren = getChildren(child.children);
-      const folded = grandChildren.map(x => Object.assign({}, x, {
-        folder: child.name,
-      }));
-      bookmarks = bookmarks.concat(folded);
+      const gc = getChildren(child.children);
+      for (let j = 0; j < gc.length; j++) {
+        const fgc = Object.assign({}, gc[j], {
+          folder: child.name,
+        });
+        bookmarks.push(fgc);
+      }
     } else {
       bookmarks.push(child);
     }
-  });
+  }
   return bookmarks;
 };
 
