@@ -105,7 +105,7 @@ describe('get childrens', () => {
     // should be an array
     expect(chrome.getChildren(items)).toBeTruthy();
     // first item
-    expect(chrome.getChildren(items)[0]).toEqual({
+    expect(chrome.getChildren(items)).toContainEqual({
       date_added: 200,
       id: 2,
       name: 'Foo',
@@ -115,7 +115,7 @@ describe('get childrens', () => {
       folder: 'Bookmarks Bar',
     });
     // second item
-    expect(chrome.getChildren(items)[1]).toEqual({
+    expect(chrome.getChildren(items)).toContainEqual({
       date_added: 400,
       id: 4,
       name: 'Bar',
