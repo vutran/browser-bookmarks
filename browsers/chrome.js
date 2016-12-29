@@ -101,16 +101,24 @@ const extractBookmarks = file => new Promise((resolve) => {
       if (dataJson.roots) {
         // build the bookmarks list
         let bookmarks = [];
-        Object.keys(dataJson.roots).forEach((folder) => {
+        let keys = Object.keys(dataJson.roots);
+        for (let i = 0; i < keys.length; i++) {
+          const folder = keys[i];
           const rootObject = dataJson.roots[folder];
           // retrieve child nodes in each root folder
           // and concatenate to global collection
           const children = rootObject.children ? getChildren(rootObject.children) : [];
           if (children.length) {
-            bookmarks = bookmarks.concat(children);
+            for (let j = 0; j < children.length; j++) {
+              bookmarks.push(children[j]);
+            }
           }
-        });
-        resolve(bookmarks.map(normalize));
+        }
+        const nb = new Array(bookmarks.length);
+        for (let i = 0; i < bookmarks.length; i++) {
+          nb[i] = normalize(bookmarks[i]);
+        }
+        resolve(nb);
       } else {
         resolve([]);
       }
